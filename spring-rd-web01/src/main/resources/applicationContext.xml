@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   http://www.springframework.org/schema/beans/spring-beans.xsd
+	   http://www.springframework.org/schema/context
+	   https://www.springframework.org/schema/context/spring-context.xsd
+	   http://www.springframework.org/schema/tx
+	   http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+	<!-- 开启注解 -->
+	<context:annotation-config/>
+	<context:component-scan base-package="org.yu.rd.web01">
+		<!--
+    type="annotation"：按照注解进行排除，标注了指定注解的组件不要扫描
+    expression：注解的全类名
+      -->
+		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+	</context:component-scan>
+
+</beans>
