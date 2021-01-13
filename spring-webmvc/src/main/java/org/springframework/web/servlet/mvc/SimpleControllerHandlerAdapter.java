@@ -41,6 +41,7 @@ public class SimpleControllerHandlerAdapter implements HandlerAdapter {
 
 	@Override
 	public boolean supports(Object handler) {
+		//实现了Controller接口
 		return (handler instanceof Controller);
 	}
 
@@ -49,6 +50,7 @@ public class SimpleControllerHandlerAdapter implements HandlerAdapter {
 	public ModelAndView handle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 
+		//调用实现类中handleRequest方法
 		return ((Controller) handler).handleRequest(request, response);
 	}
 
